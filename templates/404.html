@@ -1,1 +1,10 @@
 {% extends 'base.html' %}
+{% block title %} Page not found {%endblock%}
+
+{% block content %}
+    <div class="text-center py-6">
+        <h1 class="display-4">404</h1>
+        <p class="lead">Sorry , Page not found </p>
+        <a href = "{% url 'home' %}" class="btn btn-primary"> Go Home</a>
+    </div>
+{%endblock%}
