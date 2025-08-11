@@ -4,7 +4,7 @@ from django.config import settings
 # Create your views here.
 
 def index(request):
-    return render(request, 'home/index.html', {'restaurnat_name': settings.RESTAURANT_NAME})
+    return render(request, 'home/index.html', {'restaurnat_name': settings.RESTAURANT_NAME , 'restaurant_phone' : settings.RESTAURANT_PHONE})
 
 
 def about(request):
