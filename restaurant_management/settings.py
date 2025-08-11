@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 RESTAURANT_NAME = "Pet Pooja"
+RESTAURANT_PHONE = '+91 98765 43210'
 
 
 # Application definition
