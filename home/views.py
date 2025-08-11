@@ -9,3 +9,12 @@ def index(request):
 
 def about(request):
     return render(request, 'home/about.html', {'restaurant_name': settings.RESTAURANT_NAME})
+
+def contact(request):
+    info = {
+        'name' : getattr(settings, 'RESTAURANT_NAME', 'My Restaurant'),
+        'phone' : '+91 98765 43',
+        'email' : 'info@example.com',
+        'address' : '123 Food Street, AOnla, Barielly',
+    }
+    return render(request, 'home/contact.html', {'info': info})
