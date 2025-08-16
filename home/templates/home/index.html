@@ -1,8 +1,12 @@
 {%extends "base.html"%}
-
+{% load static %}
 {% block title %} {{ restaurnat_name }} {% endblock %}
 
 {%block content%}
     <h1 style="color:#2c3e50"> {{restaurnat_name}} </h1>
     <p style="font-size: 18px"> Welcome to {{restaurnat_name}} ! We are happy to help you</p>
+    <div style="text-align:center, padding: 40px">
+        <img src="{%static 'images/logo.png %}" alt="{{ restaurant_name}}" style="max-width: 200px, display:block, margin:0 auto 12px">
+        <h1> {{restaurant_name}}</h1>
+    </div>
 {% endblock %}
