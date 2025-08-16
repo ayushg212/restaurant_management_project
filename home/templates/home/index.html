@@ -1,12 +1,19 @@
 {%extends "base.html"%}
 {% load static %}
-{% block title %} {{ restaurnat_name }} {% endblock %}
+{% block head_extra %} 
+<style> body {font-family:Arial,sans-serif;background:#f7f8fa;color:#222}.hero{padding:28px;text-align:center;background:#ffff;border-radius;8px;margin-bottom:16px}.logo{max-width:160;margin:0 auto 10px;display:block}.card-tiny{padding:12px;border-radius:6px;box-shadow:0 6px 12px rgba(0,0,0,.06);text-align:center}</style>}
+{% endblock %}
 
 {%block content%}
-    <h1 style="color:#2c3e50"> {{restaurnat_name}} </h1>
-    <p style="font-size: 18px"> Welcome to {{restaurnat_name}} ! We are happy to help you</p>
-    <div style="text-align:center, padding: 40px">
-        <img src="{%static 'images/logo.png %}" alt="{{ restaurant_name}}" style="max-width: 200px, display:block, margin:0 auto 12px">
+<div class ="hero">
+        <img src="{%static 'images/logo.png %}" alt="{{ restaurant_name}}" class="logo">
         <h1> {{restaurant_name}}</h1>
-    </div>
+        <p> Welcome - good food ,fast service</p>
+    </div>  
+<div class="row g-3">
+    <div class="col-md-4"><div class="card-tiny">Fresh</div></div>
+    <div class="col-md-4"><div class="card-tiny">Fast</div></div>
+    <div class="col-md-4"><div class="card-tiny">Cozy</div></div>
+</div>
 {% endblock %}
+
