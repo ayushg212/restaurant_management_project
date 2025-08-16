@@ -18,3 +18,6 @@ def contact(request):
         'address' : '123 Food Street, AOnla, Barielly',
     }
     return render(request, 'home/contact.html', {'info': info})
+
+def resvervations(request):
+    return render(request, 'home/reservations.html')
