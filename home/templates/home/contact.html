@@ -1,23 +1,24 @@
-{% extends 'base.html' %}
-{% block title %} Contact - {{ info.name }} {{ endblock }}
-
+{% extends 'base.html'}
 {% block content %}
-<div>
-    <h1> Contact Us</h1>
 
-    <p> We'd love to hear from you. </p>
+<form method="post" onsubmit="return v()">
+    {% csrf token %}
+    <input id="n" name="name" placeholder="Name"><br>
+    <input id="e" name="email" type="email" placeholder="Email"><br>
+    <textarea name="message" placeholder="Message" rows="4"></textarea><br>
+    <button type="submit">send</button>
+</form>
 
-    <div> 
-        <div>
-            <div>
-                <p> <strong> Restauranat: </strong> {{info.name}} </p>
-                <p> <strong> Phone: </strong> <a href="tel: {{info.Phone}}"> {{info.phone}}</a></p>
-                <p> {{info.email}} </p>
-                <p> {{info.address}} </p>
+<script>
 
-            </div>
-        </div>
-    </div>
-</div>
+    function v(){
+        if(!document.getElementById('n').value.trim() || !document.getElementById('e').value.trim()){
+            alert("Please Enter name and email");
+            return false;
+        }
+        return true;
+    }
 
-{{endblock}}
+</script>
+
+{% endblock %}
