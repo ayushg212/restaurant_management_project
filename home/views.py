@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.config import settings
+from .models import Feedback
 
 # Create your views here.
 
@@ -21,3 +22,17 @@ def contact(request):
 
 def resvervations(request):
     return render(request, 'home/reservations.html')
+
+def feedback(request):
+    if request.method == 'POST':
+        name = request.POST.get('name','').strip()
+        email = request.POST.get('email','').strip()
+        comments = request.POST.get('comments','').strip()
+        if comments:
+            Feedback.objects.create(name = name , email = email, comments = comments)
+            return redirect('feedback_thanks')
+        return render(request, 'home/feedback.html')
+    return render(request, 'home/feedback.html')
+
+def feedback_thanks(request):
+    return render(request, 'home/feedback_thanks.html')
