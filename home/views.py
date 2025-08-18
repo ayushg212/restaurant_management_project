@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.config import settings
-from .models import Feedback
+from .models import Feedback, MenuItem
 
 # Create your views here.
 
@@ -36,3 +36,8 @@ def feedback(request):
 
 def feedback_thanks(request):
     return render(request, 'home/feedback_thanks.html')
+
+
+def menu_view(request):
+    items = MenuItem.objects.all()
+    return render(request, 'menu.html',{'items': items})
