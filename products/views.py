@@ -37,7 +37,14 @@ def menu_list(request):
     ]
     return render(request, 'products/menu.html', {'menu_items': menu_items})
 
-
+@api_view(['GET'])
+def simpla_menu(request):
+    menu =  [
+        {'name': 'Margherita Pizza', 'price': '199', 'desc': 'Classic cheese & tomato'},
+        {'name': 'Veg Burger', 'price': '149', 'desc': 'Patty with fresh veggies'},
+        {'name': 'Pasta Alferfo', 'price': '129', 'desc': 'Cremy garlic saouce'},
+    ]
+    return Response(menu)
 
 @api_view(['GET','POST'])
 def menuitem_list_create(request):
