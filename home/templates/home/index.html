@@ -20,5 +20,21 @@
     <button type="submit">Search</button>
 </form>
 
+<h2>Menu</h2>
+<div id="items"> Loading...</div>
+
+<script>
+    fetch('api/menu/simple/')
+        .then(r=>r.json)
+        .then(d=>{
+            if(!d.length) return document.getElementById('items').innerHTML='<p>No items</p>'
+            let h=''
+            for (let i of d) h += '<div><b>${i.name}</b> - Rs. ${i.price}<br><small> ${i.description}'
+            document.getElementById('items').innerHTML = h
+        })
+        .catch(_=>document.getElementById('items').innerHTML= '<p>Error</p>'')
+</script>
+
+
 {% endblock %}
 
