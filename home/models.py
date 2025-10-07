@@ -28,3 +28,5 @@ class Contact(models.model):
     name = models.CharField(max_length=120, blank=True, null= True)
     email = models.EmailField(blank= True, null = True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    
