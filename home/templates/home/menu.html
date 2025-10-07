@@ -6,5 +6,10 @@
 <ul>
     {% for item in items %}
         <li> {{item.name}} ------ {{item.price}}</li>
+        {% if item_image %}
+        <img src="{{item.image_url}}" alt="{{item.name}}">
+        {% else %}
+        <p> No image </p>
+        {% endif %}
     {% endfor %}
 {% endblock %}
