@@ -29,4 +29,11 @@ class Contact(models.model):
     email = models.EmailField(blank= True, null = True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+class RestaurantLocation(models.Model):
+    address = models.CharField(max_length = 255 )
+    city = models.CharField(max_length = 100)
+    state = models.CharField(max_length = 100)
+    zipcode = models.CharField(max_length = 20)
+    
+
     
